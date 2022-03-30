@@ -1,3 +1,9 @@
-Main
+<section class="main" [ngClass]="{hidden: noTodoClass$ | async }">
+<ul class="todo-list">
+	<app-todos-todo 
+		*ngFor="let todo of visibleTodos$ | async"
+		[todo]="todo"
+	></app-todos-todo>
+</ul>
 
-=={{visibleTodos$ | async | json}}==
+</section>
